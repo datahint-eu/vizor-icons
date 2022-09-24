@@ -9,7 +9,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vizor.Icons.Tabler", "Vizor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vizor.Icons.Generators", "Vizor.Icons.Generators\Vizor.Icons.Generators.csproj", "{694707D0-3A85-4FFD-879B-C882983C409D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vizor.Icons.Demo", "Vizor.Icons.Demo\Vizor.Icons.Demo.csproj", "{3A226D0B-1EBB-4B2A-872F-B09883483E1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vizor.Icons.Demo", "Vizor.Icons.Demo\Vizor.Icons.Demo.csproj", "{3A226D0B-1EBB-4B2A-872F-B09883483E1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E2233643-E473-49A9-87B5-9FB7205332EF}"
+	ProjectSection(SolutionItems) = preProject
+		IconData.cs = IconData.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

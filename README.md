@@ -47,6 +47,9 @@ More documentation is available in the Readme.md file of each icon pack.
 - [Bootstrap](https://github.com/datahint-eu/vizor-icons/tree/main/src/Vizor.Icons.Bootstrap)
 - [Tabler](https://github.com/datahint-eu/vizor-icons/tree/main/src/Vizor.Icons.Tabler)
 
+Launch the `Vizor.Icons.Demo` project to preview all icons and style options.
+Make sure to read the build instructions carefully before launching the Demo project.
+
 ## Future work
 
 Following icon packs might be added in the future, open a request to let me know you are interested:

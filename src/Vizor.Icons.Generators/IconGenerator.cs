@@ -143,6 +143,9 @@ public class IconGenerator : IIncrementalGenerator
 			return;
 		}
 
+		// generate an IconData class in the correct namespace
+		GenerateIconDataClass(context, projectDir, ns);
+
 		// generate the partial class
 		var sb = new StringBuilder();
 		sb.AppendLine("using Microsoft.AspNetCore.Components;");
@@ -164,12 +167,40 @@ public class IconGenerator : IIncrementalGenerator
 			var fill = svg.DocumentElement.GetAttribute("fill");
 			var cssClass = svg.DocumentElement.GetAttribute("class");
 			var viewBox = svg.DocumentElement.GetAttribute("viewBox");
+			
+			var stroke = svg.DocumentElement.GetAttribute("stroke");
+			var strokeWidth = svg.DocumentElement.GetAttribute("stroke-width");
+			var strokeLineCap = svg.DocumentElement.GetAttribute("stroke-linecap");
+
+			var strokeLineJoin = svg.DocumentElement.GetAttribute("stroke-linejoin");
+			
 
 			// extract all the children in 1 single line + double quote
 			var content = svg.DocumentElement.InnerXml.Replace("\r\n", "").Replace("\n", "").Replace("\r", "").Replace("\"", "\"\"");
 
-			// public IconData(string svgContent, string xmlns, string width, string height, string fill, string cssClass, string viewBox)
-			sb.AppendLine($"\tpublic static readonly IconData {iconName} = new IconData(svgContent: @\"{content}\", xmlns: \"{xmlns}\", width: \"{width}\", height: \"{height}\", fill: \"{fill}\", cssClass: \"{cssClass}\", viewBox: \"{viewBox}\");");
+			sb.Append($"\tpublic static readonly IconData {iconName} = new IconData(svgContent: @\"{content}\"");
+			if (!string.IsNullOrWhiteSpace(xmlns))
+				sb.Append($", xmlns: \"{xmlns}\"");
+			if (!string.IsNullOrWhiteSpace(width))
+				sb.Append($", width: \"{width}\"");
+			if (!string.IsNullOrWhiteSpace(height))
+				sb.Append($", height: \"{height}\"");
+			if (!string.IsNullOrWhiteSpace(fill))
+				sb.Append($", fill: \"{fill}\"");
+			if (!string.IsNullOrWhiteSpace(cssClass))
+				sb.Append($", cssClass: \"{cssClass}\"");
+			if (!string.IsNullOrWhiteSpace(viewBox))
+				sb.Append($", viewBox: \"{viewBox}\"");
+			if (!string.IsNullOrWhiteSpace(stroke))
+				sb.Append($", stroke: \"{stroke}\"");
+			if (!string.IsNullOrWhiteSpace(strokeWidth))
+				sb.Append($", strokeWidth: \"{strokeWidth}\"");
+			if (!string.IsNullOrWhiteSpace(strokeLineCap))
+				sb.Append($", strokeLineCap: \"{strokeLineCap}\"");
+			if (!string.IsNullOrWhiteSpace(strokeLineJoin))
+				sb.Append($", strokeLineJoin: \"{strokeLineJoin}\"");
+
+			sb.AppendLine(");");
 		}
 
 		sb.AppendLine("}");
@@ -181,5 +212,19 @@ public class IconGenerator : IIncrementalGenerator
 		{
 			File.WriteAllText(Path.Combine(projectDir, dict["debug-output"]), sb.ToString());
 		}
+	}
+
+	private static void GenerateIconDataClass(SourceProductionContext context, string projectDir, string ns)
+	{
+		var file = Path.Combine(projectDir, "../IconData.cs");
+		if (!File.Exists(file))
+		{
+			context.ReportDiagnostic(Diagnostic.Create(ErrorCodes.InvalidSourcePathWarning, Location.None, file));
+			return;
+		}
+
+		var fileContent = File.ReadAllText(file).Replace("NAMESPACE", ns);
+
+		context.AddSource($"IconData.generated.cs", fileContent);
 	}
 }
