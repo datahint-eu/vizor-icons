@@ -1,15 +1,4 @@
-﻿// Following steps are required to install gulp: see https://gulpjs.com/docs/en/getting-started/quick-start/
-// npm install --global gulp-cli
-//
-// in the project dir:
-//   npm init
-//   npm install --save-dev gulp gulp-clean
-//   npm install bootstrap-icons
-//
-// to build:
-//   gulp
-
-var path = require('path'),
+﻿var path = require('path'),
 	clean = require('gulp-clean'),
 	gulp = require('gulp');
 

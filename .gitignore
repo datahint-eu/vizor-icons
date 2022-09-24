@@ -345,7 +345,5 @@ healthchecksdb
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
-
-# Ionide (cross platform F# VS Code tools) working folder
-.ionide/
-*.json
+/src/Vizor.Icons.Bootstrap/package-lock.json
+/src/Vizor.Icons.Tabler/package-lock.json

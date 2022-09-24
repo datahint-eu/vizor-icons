@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Vizor.Icons.Demo": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:1194;http://localhost:1195"
+    }
+  }
+}
