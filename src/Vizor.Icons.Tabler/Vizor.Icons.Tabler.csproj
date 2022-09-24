@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<Title>Tabler Bootstrap Icons</Title>
+		<Authors>Ben Motmans</Authors>
+		<Company>DataHint BV</Company>
+		<Description>Blazor components for the Tabler icon pack. Both SVG and font icons are supported.</Description>
+		<Copyright>DataHint BV</Copyright>
+		<PackageProjectUrl>https://github.com/datahint-eu/vizor-icons</PackageProjectUrl>
+		<PackageReadmeFile>Readme.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/datahint-eu/vizor-icons</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>blazor;tabler;bootstrap;icon;icons;pack;svg;font;fonticon</PackageTags>
+
+		<Version>1.100.0.0</Version>
+		<ProductVersion>$(Version)</ProductVersion>
+		<AssemblyVersion>$(Version)</AssemblyVersion>
+		<FileVersion>$(Version)</FileVersion>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.8" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="wwwroot\" />
+	</ItemGroup>
+
+	<!-- See https://stackoverflow.com/a/66702383 -->
+	<ItemGroup>
+		<ProjectReference Include="..\Vizor.Icons.Generators\Vizor.Icons.Generators.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer" SetTargetFramework="TargetFramework=netstandard2.0" />
+	</ItemGroup>
+
+</Project>
