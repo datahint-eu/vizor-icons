@@ -15,8 +15,10 @@
 		<RepositoryUrl>https://github.com/datahint-eu/vizor-icons</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>blazor;tabler;bootstrap;icon;icons;pack;svg;font;fonticon</PackageTags>
+		<PackageIcon>datahint_logo.png</PackageIcon>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 
-		<Version>1.100.0.0</Version>
+		<Version>1.100.0</Version>
 		<ProductVersion>$(Version)</ProductVersion>
 		<AssemblyVersion>$(Version)</AssemblyVersion>
 		<FileVersion>$(Version)</FileVersion>
@@ -33,6 +35,17 @@
 
 	<ItemGroup>
 		<Folder Include="wwwroot\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\datahint_logo.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Update="Readme.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 
 	<!-- See https://stackoverflow.com/a/66702383 -->

@@ -14,6 +14,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E2233643-E473-49A9-87B5-9FB7205332EF}"
 	ProjectSection(SolutionItems) = preProject
 		IconData.cs = IconData.cs
+		TODO.md = TODO.md
 	EndProjectSection
 EndProject
 Global

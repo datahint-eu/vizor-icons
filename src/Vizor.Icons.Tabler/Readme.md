@@ -80,6 +80,6 @@ npm update @tabler/icons
 3. Run gulp
 4. Update Vizor.Icons.Tabler.csproj to the correct version
 ```
-<Version>1.100.0.0</Version>
+<Version>1.100.0-rc1</Version>
 ```
 5. Rebuild the package

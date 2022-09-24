@@ -77,6 +77,6 @@ npm update bootstrap-icons
 3. Run gulp
 4. Update Vizor.Icons.Bootstrap.csproj to the correct version
 ```
-<Version>1.9.1.0</Version>
+<Version>1.9.1-rc1</Version>
 ```
 5. Rebuild the package
