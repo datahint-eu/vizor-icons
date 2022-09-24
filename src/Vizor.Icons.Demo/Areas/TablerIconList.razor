@@ -1,0 +1,36 @@
+﻿@page "/icons/tabler/svg"
+
+<PageTitle>Vizor - Tabler Icons</PageTitle>
+
+<ul class="row row-cols-3 row-cols-sm-4 row-cols-lg-6 row-cols-xl-8 list-unstyled list">
+	@foreach (var pair in icons)
+	{
+			<li class="col mb-4">
+				<div class="d-block text-dark text-decoration-none">
+					<div class="p-3 py-4 mb-2 bg-light text-center rounded">
+					<TablerSvgIcon Icon="@pair.Value" Width="32" Height="32" />
+					</div>
+					<div class="name text-muted text-decoration-none text-center pt-1">@pair.Key</div>
+				</div>
+			</li>
+	}
+</ul>
+
+@code {
+
+	private List<KeyValuePair<string, Tabler.IconData>> icons = new();
+
+	protected override void OnInitialized()
+	{
+		var fields = typeof(TablerSvgIcon).GetFields();
+		icons.EnsureCapacity(fields.Length);
+
+		foreach (var field in fields)
+		{
+			if (field.GetValue(null) is not Tabler.IconData iconData)
+				continue;
+
+			icons.Add(new KeyValuePair<string, Tabler.IconData>(field.Name, iconData));
+		}
+	}
+}

@@ -1,0 +1,22 @@
+﻿@Icon.Render(Width, Height, Fill, CssClass, ViewBox)
+
+@code {
+
+	[Parameter, EditorRequired]
+	public IconData Icon { get; set; } = default!;
+
+	[Parameter]
+	public string? CssClass { get; set; }
+
+	[Parameter]
+	public string? Width { get; set; }
+
+	[Parameter]
+	public string? Height { get; set; }
+
+	[Parameter]
+	public string? Fill { get; set; }
+
+	[Parameter]
+	public string? ViewBox { get; set; }
+}
