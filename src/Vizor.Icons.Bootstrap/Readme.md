@@ -2,6 +2,8 @@
 
 ## Includes
 
+Add a package reference to **Vizor.Icons.Bootstrap**.
+
 **SVG icons** do not require any additional imports.
 
 **Font icons** require the following css to be included:
@@ -39,7 +41,7 @@ Add the following namespace to **_Imports.razor**
 <i class="BootstrapFontIcon.ExclamationTriangle" />
 ```
 
-## Contributin
+## Contributing
 
 ### Compiling
 

@@ -2,6 +2,11 @@
 
 ## Includes
 
+Add a package reference to **Vizor.Icons.Tabler**.
+```
+TODO
+```
+
 **SVG icons** do not require any additional imports.
 
 **Font icons** require the following css to be included:
@@ -39,7 +44,7 @@ Add the following namespace to **_Imports.razor**
 <i class="TablerFontIcon.AlertTriangle" />
 ```
 
-## Contributin
+## Contributing
 
 ### Compiling
 
