@@ -17,7 +17,7 @@
     "sass": "^1.54.8"
   },
   "dependencies": {
-    "bootstrap-icons": "^1.9.1"
+    "bootstrap-icons": "1.9.1"
   },
   "description": ""
 }
