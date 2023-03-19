@@ -62,3 +62,4 @@ Following icon packs might be added in the future, open a request to let me know
 - https://materialdesignicons.com/
 - https://flagicons.lipis.dev/
 - https://github.com/bytedance/IconPark
+- https://boxicons.com/
