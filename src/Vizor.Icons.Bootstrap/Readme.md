@@ -67,7 +67,7 @@ See https://gulpjs.com/docs/en/getting-started/quick-start/ for more information
 1. Update the dependency version in package.json to the latest version
 ```
 "dependencies": {
-    "bootstrap-icons": "1.9.1"
+    "bootstrap-icons": "1.10.3"
 }
 ```
 2. Run npm update
@@ -77,6 +77,6 @@ npm update bootstrap-icons
 3. Run gulp
 4. Update Vizor.Icons.Bootstrap.csproj to the correct version
 ```
-<Version>1.9.1-rc1</Version>
+<Version>1.10.3</Version>
 ```
 5. Rebuild the package
