@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Components;
+using System.Text;
 
 namespace NAMESPACE;
 
@@ -83,6 +84,91 @@ public static class IconDataExtensions
 
 		builder.CloseElement();
 	};
+
+	public static string RenderAsString(this IconData data, string? width, string? height, string? fill, string? cssClass, string? viewBox)
+	{
+		var sb = new StringBuilder();
+
+		sb.Append("<svg");
+
+		if (data.Xmlns != null) {
+			sb.Append(" xmlns=\"");
+			sb.Append(data.Xmlns);
+			sb.Append('"');
+		}
+
+		if (data.Width != null || width != null)
+		{
+			sb.Append(" width=\"");
+			sb.Append(width ?? data.Width);
+			sb.Append('"');
+		}
+
+		if (data.Height != null || height != null)
+		{
+			sb.Append(" height=\"");
+			sb.Append(height ?? data.Height);
+			sb.Append('"');
+		}
+
+		if (data.Fill != null || fill != null)
+		{
+			sb.Append(" fill=\"");
+			sb.Append(fill ?? data.Fill);
+			sb.Append('"');
+		}
+
+		if (data.ViewBox != null || viewBox != null)
+		{
+			sb.Append(" viewBox=\"");
+			sb.Append(viewBox ?? data.ViewBox);
+			sb.Append('"');
+		}
+
+		if (data.Stroke != null)
+		{
+			sb.Append(" stroke=\"");
+			sb.Append(data.Stroke);
+			sb.Append('"');
+		}
+
+		if (data.StrokeWidth != null)
+		{
+			sb.Append(" stroke-width=\"");
+			sb.Append(data.StrokeWidth);
+			sb.Append('"');
+		}
+
+		if (data.StrokeLineCap != null)
+		{
+			sb.Append(" stroke-linecap=\"");
+			sb.Append(data.StrokeLineCap);
+			sb.Append('"');
+		}
+
+		if (data.StrokeLineJoin != null)
+		{
+			sb.Append(" stroke-linejoin=\"");
+			sb.Append(data.StrokeLineJoin);
+			sb.Append('"');
+		}
+
+		sb.Append(" class=\"");
+		if (string.IsNullOrWhiteSpace(cssClass))
+		{
+			sb.Append(data.Class);
+		}
+		else
+		{
+			sb.Append(data.Class + ' ' + cssClass);
+		}
+		sb.Append("\">");
+
+		sb.Append(data.SvgContent);
+		sb.Append("</svg>");
+
+		return sb.ToString();
+	}
 }
 
 #nullable disable
